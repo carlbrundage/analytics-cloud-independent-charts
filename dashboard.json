@@ -1,0 +1,538 @@
+{
+    "label": "Comparison",
+    "description": "Compare metrics side-by-side.",
+    "state": {
+        "dataSourceLinks": [],
+        "gridLayouts": [
+            {
+                "name": "Default",
+                "numColumns": 12,
+                "pages": [
+                    {
+                        "widgets": [
+                            {
+                                "colspan": 12,
+                                "column": 0,
+                                "name": "text_1",
+                                "row": 0,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "borderEdges": []
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "container_1",
+                                "row": 1,
+                                "rowspan": 11,
+                                "widgetStyle": {
+                                    "backgroundColor": "#FFFFFF",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 6,
+                                "name": "container_3",
+                                "row": 1,
+                                "rowspan": 11,
+                                "widgetStyle": {
+                                    "backgroundColor": "#FFFFFF",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "text_3",
+                                "row": 1,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "rgba(255, 255, 255, 0)",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [
+                                        "bottom"
+                                    ],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 6,
+                                "name": "text_4",
+                                "row": 1,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "rgba(255, 255, 255, 0)",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [
+                                        "bottom"
+                                    ],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "chart_1",
+                                "row": 7,
+                                "rowspan": 5,
+                                "widgetStyle": {
+                                    "borderEdges": []
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 6,
+                                "name": "chart_3",
+                                "row": 7,
+                                "rowspan": 5,
+                                "widgetStyle": {
+                                    "borderEdges": []
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "dateselector_1",
+                                "row": 2,
+                                "rowspan": 5,
+                                "widgetStyle": {
+                                    "borderEdges": []
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 6,
+                                "name": "dateselector_2",
+                                "row": 2,
+                                "rowspan": 5,
+                                "widgetStyle": {
+                                    "borderEdges": []
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "rowHeight": "normal",
+                "selectors": [],
+                "style": {
+                    "alignmentX": "left",
+                    "alignmentY": "top",
+                    "backgroundColor": "#F2F6FA",
+                    "cellSpacingX": 8,
+                    "cellSpacingY": 8,
+                    "documentId": "",
+                    "fit": "original"
+                },
+                "version": 1
+            }
+        ],
+        "layouts": [],
+        "steps": {
+            "Date2": {
+                "datasets": [
+                    {
+                        "id": "0Fb410000008vLJCAY",
+                        "label": "Opportunities",
+                        "name": "opportunity1",
+                        "url": "/services/data/v39.0/wave/datasets/0Fb410000008vLJCAY"
+                    }
+                ],
+                "isFacet": false,
+                "isGlobal": false,
+                "query": {
+                    "measures": [
+                        [
+                            "count",
+                            "*"
+                        ]
+                    ],
+                    "groups": [
+                        "CloseDate_Year"
+                    ],
+                    "filters": []
+                },
+                "selectMode": "single",
+                "start": [
+                    [
+                        [
+                            "year",
+                            -1
+                        ],
+                        [
+                            "year",
+                            -1
+                        ]
+                    ]
+                ],
+                "type": "aggregateflex",
+                "useGlobal": false,
+                "visualizationParameters": {
+                    "options": {}
+                }
+            },
+            "Chart2": {
+                "datasets": [
+                    {
+                        "id": "0Fb410000008vLJCAY",
+                        "label": "Opportunities",
+                        "name": "opportunity1",
+                        "url": "/services/data/v39.0/wave/datasets/0Fb410000008vLJCAY"
+                    }
+                ],
+                "isFacet": false,
+                "isGlobal": false,
+                "query": {
+                    "measures": [
+                        [
+                            "avg",
+                            "Amount"
+                        ]
+                    ],
+                    "groups": [
+                        [
+                            "CloseDate_Year",
+                            "CloseDate_Month"
+                        ]
+                    ],
+                    "filters": [
+                        [
+                            "Close Date",
+                            [
+                                "{{row(Date2.selection, [0], [\"min\", \"max\"]).asObject()}}"
+                            ],
+                            ">=<="
+                        ]
+                    ]
+                },
+                "selectMode": "single",
+                "type": "aggregateflex",
+                "useGlobal": true,
+                "visualizationParameters": {
+                    "visualizationType": "vbar",
+                    "options": {}
+                }
+            },
+            "Date1": {
+                "datasets": [
+                    {
+                        "id": "0Fb410000008vLJCAY",
+                        "label": "Opportunities",
+                        "name": "opportunity1",
+                        "url": "/services/data/v39.0/wave/datasets/0Fb410000008vLJCAY"
+                    }
+                ],
+                "isFacet": false,
+                "isGlobal": false,
+                "query": {
+                    "measures": [
+                        [
+                            "count",
+                            "*"
+                        ]
+                    ],
+                    "groups": [
+                        "CloseDate_Year"
+                    ],
+                    "filters": []
+                },
+                "selectMode": "single",
+                "start": [
+                    [
+                        [
+                            "year",
+                            0
+                        ],
+                        [
+                            "day",
+                            0
+                        ]
+                    ]
+                ],
+                "type": "aggregateflex",
+                "useGlobal": false,
+                "visualizationParameters": {
+                    "options": {}
+                }
+            },
+            "Chart1": {
+                "datasets": [
+                    {
+                        "id": "0Fb410000008vLJCAY",
+                        "label": "Opportunities",
+                        "name": "opportunity1",
+                        "url": "/services/data/v39.0/wave/datasets/0Fb410000008vLJCAY"
+                    }
+                ],
+                "isFacet": false,
+                "isGlobal": false,
+                "query": {
+                    "measures": [
+                        [
+                            "avg",
+                            "Amount"
+                        ]
+                    ],
+                    "groups": [
+                        [
+                            "CloseDate_Year",
+                            "CloseDate_Month"
+                        ]
+                    ],
+                    "filters": [
+                        [
+                            "Close Date",
+                            [
+                                "{{row(Date1.selection, [0], [\"min\", \"max\"]).asObject()}}"
+                            ],
+                            ">=<="
+                        ]
+                    ]
+                },
+                "selectMode": "single",
+                "type": "aggregateflex",
+                "useGlobal": true,
+                "visualizationParameters": {
+                    "visualizationType": "vbar",
+                    "options": {}
+                }
+            }
+        },
+        "widgetStyle": {
+            "backgroundColor": "rgba(255, 255, 255, 0)",
+            "borderColor": "#E6ECF2",
+            "borderEdges": [],
+            "borderRadius": 0,
+            "borderWidth": 1
+        },
+        "widgets": {
+            "container_1": {
+                "parameters": {
+                    "alignmentX": "left",
+                    "alignmentY": "top",
+                    "documentId": "",
+                    "fit": "original"
+                },
+                "type": "container"
+            },
+            "container_3": {
+                "parameters": {
+                    "alignmentX": "left",
+                    "alignmentY": "top",
+                    "documentId": "",
+                    "fit": "original"
+                },
+                "type": "container"
+            },
+            "dateselector_1": {
+                "parameters": {
+                    "calendarTypeSwitchingAllowed": false,
+                    "defaultAbsoluteMode": true,
+                    "defaultFiscalMode": false,
+                    "instant": false,
+                    "modeSwitchingAllowed": true,
+                    "step": "Date1",
+                    "title": "Close Date"
+                },
+                "type": "dateselector"
+            },
+            "text_1": {
+                "parameters": {
+                    "fontSize": 24,
+                    "text": "Independent Chart Comparison",
+                    "textAlignment": "center",
+                    "textColor": "#335779"
+                },
+                "type": "text"
+            },
+            "text_3": {
+                "parameters": {
+                    "fontSize": 18,
+                    "text": "Item A",
+                    "textAlignment": "center",
+                    "textColor": "#000000"
+                },
+                "type": "text"
+            },
+            "dateselector_2": {
+                "parameters": {
+                    "calendarTypeSwitchingAllowed": false,
+                    "defaultAbsoluteMode": true,
+                    "defaultFiscalMode": false,
+                    "instant": false,
+                    "modeSwitchingAllowed": true,
+                    "step": "Date2",
+                    "title": "Close Date"
+                },
+                "type": "dateselector"
+            },
+            "text_4": {
+                "parameters": {
+                    "fontSize": 18,
+                    "text": "Item B",
+                    "textAlignment": "center",
+                    "textColor": "#000000"
+                },
+                "type": "text"
+            },
+            "chart_1": {
+                "parameters": {
+                    "autoFitMode": "fit",
+                    "showValues": true,
+                    "bins": {
+                        "breakpoints": {
+                            "high": 100,
+                            "low": 0
+                        },
+                        "bands": {
+                            "high": {
+                                "color": "#008000",
+                                "label": ""
+                            },
+                            "low": {
+                                "color": "#B22222",
+                                "label": ""
+                            },
+                            "medium": {
+                                "color": "#ffa500",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "legend": {
+                        "showHeader": true,
+                        "show": false,
+                        "customSize": "auto",
+                        "position": "right-top",
+                        "inside": false
+                    },
+                    "axisMode": "multi",
+                    "visualizationType": "vbar",
+                    "trellis": {
+                        "enable": false,
+                        "type": "x",
+                        "chartsPerLine": 4
+                    },
+                    "title": {
+                        "label": "",
+                        "align": "center",
+                        "subtitleLabel": ""
+                    },
+                    "binValues": false,
+                    "measureAxis2": {
+                        "sqrtScale": false,
+                        "showTitle": true,
+                        "showAxis": true,
+                        "title": "",
+                        "referenceLine": null
+                    },
+                    "measureAxis1": {
+                        "sqrtScale": false,
+                        "showTitle": true,
+                        "showAxis": true,
+                        "title": "",
+                        "referenceLine": null
+                    },
+                    "theme": "light",
+                    "step": "Chart1",
+                    "dimensionAxis": {
+                        "showTitle": true,
+                        "customSize": "auto",
+                        "showAxis": true,
+                        "title": ""
+                    },
+                    "exploreLink": true
+                },
+                "type": "chart"
+            },
+            "chart_3": {
+                "parameters": {
+                    "autoFitMode": "fit",
+                    "showValues": true,
+                    "bins": {
+                        "breakpoints": {
+                            "high": 100,
+                            "low": 0
+                        },
+                        "bands": {
+                            "high": {
+                                "color": "#008000",
+                                "label": ""
+                            },
+                            "low": {
+                                "color": "#B22222",
+                                "label": ""
+                            },
+                            "medium": {
+                                "color": "#ffa500",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "legend": {
+                        "showHeader": true,
+                        "show": false,
+                        "customSize": "auto",
+                        "position": "right-top",
+                        "inside": false
+                    },
+                    "axisMode": "multi",
+                    "visualizationType": "vbar",
+                    "trellis": {
+                        "enable": false,
+                        "type": "x",
+                        "chartsPerLine": 4
+                    },
+                    "title": {
+                        "label": "",
+                        "align": "center",
+                        "subtitleLabel": ""
+                    },
+                    "binValues": false,
+                    "measureAxis2": {
+                        "sqrtScale": false,
+                        "showTitle": true,
+                        "showAxis": true,
+                        "title": "",
+                        "referenceLine": null
+                    },
+                    "measureAxis1": {
+                        "sqrtScale": false,
+                        "showTitle": true,
+                        "showAxis": true,
+                        "title": "",
+                        "referenceLine": null
+                    },
+                    "step": "Chart2",
+                    "theme": "light",
+                    "dimensionAxis": {
+                        "showTitle": true,
+                        "customSize": "auto",
+                        "showAxis": true,
+                        "title": ""
+                    },
+                    "exploreLink": true
+                },
+                "type": "chart"
+            }
+        }
+    },
+    "datasets": [
+        {
+            "id": "0Fb410000008vLJCAY",
+            "label": "Opportunities",
+            "name": "opportunity1",
+            "url": "/services/data/v39.0/wave/datasets/0Fb410000008vLJCAY"
+        }
+    ]
+}
